@@ -1,4 +1,14 @@
-﻿using System;
+﻿// ***********************************************************************************
+//  Created by zbw911 
+//  创建于：2014年02月13日 12:00
+//  
+//  修改于：2014年02月13日 17:00
+//  文件名：Dev.KeywordExtract/Dev.KeywordExtract/DefaultParser.cs
+//  
+//  如果有更好的建议或意见请邮件至 zbw911#gmail.com
+// ***********************************************************************************
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,20 +17,18 @@ namespace Dev.KeywordExtract
 {
     public class DefaultParser : IParse
     {
-
         public string FilterSource(string sourceText)
         {
             var text = Strip_Tags(sourceText);
 
 
             return text;
-
         }
 
-
         #region Html 标记
+
         /// <summary>
-        ///   去除HTML标记
+        ///     去除HTML标记
         /// </summary>
         /// <param name="AHtml"> </param>
         /// <returns> </returns>
@@ -39,10 +47,10 @@ namespace Dev.KeywordExtract
         private static readonly char[] MarkupChar = { ' ', ' ', ' ', '<', '>', '&', '"', '*', '/' };
 
         private static readonly string[] ReplaceString =
-            {
-                "&ensp;", "&emsp;", "&nbsp;", "&lt;", "&gt;", "&amp;",
-                "&quot;", "&times;", "&divide;"
-            };
+        {
+            "&ensp;", "&emsp;", "&nbsp;", "&lt;", "&gt;", "&amp;",
+            "&quot;", "&times;", "&divide;"
+        };
 
         private static string ReplaceMarkupChar(string source)
         {
@@ -51,13 +59,12 @@ namespace Dev.KeywordExtract
 
             return source;
         }
+
         #endregion
 
         public Dictionary<string, int> Extract(string sourceText, IEnumerable<string> dicword)
         {
-            //throw new NotImplementedException();
 
-            List<string> s;
             var dics = new Dictionary<string, int>();
 
             for (int i = 0; i < sourceText.Length; i++)

@@ -1,4 +1,14 @@
-﻿using System;
+﻿// ***********************************************************************************
+//  Created by zbw911 
+//  创建于：2014年02月13日 11:41
+//  
+//  修改于：2014年02月13日 17:00
+//  文件名：Dev.KeywordExtract/Dev.KeywordExtract.Test/UnitTestDefaultParser.cs
+//  
+//  如果有更好的建议或意见请邮件至 zbw911#gmail.com
+// ***********************************************************************************
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dev.KeywordExtract.Test
@@ -13,7 +23,7 @@ namespace Dev.KeywordExtract.Test
         public void TestMethod1()
         {
             string source = "我有一个梦想，我们都是共产主义掘墓人，我们一起来努力,来吧，共产主义好，社会主义好，个屁";
-            string[] dics = new[] { "我们", "是", "一" };
+            string[] dics = new[] {"我们", "是", "一"};
             var kw = parse.Extract(source, dics);
 
             foreach (var i in kw)
