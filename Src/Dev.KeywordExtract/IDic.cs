@@ -13,5 +13,10 @@ namespace Dev.KeywordExtract
 
         void Delete(string word);
         List<string> GetDicWord();
+        /// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="words"></param>
+        void Update(IEnumerable<string> words);
     }
 }

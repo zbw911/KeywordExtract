@@ -26,12 +26,7 @@ namespace Dev.KeywordExtract
         {
             Load();
 
-            if (!_cachedWords.Exists(x => x == word.Trim()))
-            {
-
-                File.AppendAllLines(_dicPath, new[] { word });
-                _cachedWords.Add(word);
-            }
+            AddOrUpdate(word);
         }
 
         public void Delete(string word)
@@ -51,6 +46,29 @@ namespace Dev.KeywordExtract
                 Load();
 
             return _cachedWords;
+        }
+
+        public void Update(IEnumerable<string> words)
+        {
+            Load();
+
+            foreach (var word in words)
+            {
+                AddOrUpdate(word);
+            }
+        }
+
+
+        public void AddOrUpdate(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word))
+                return;
+
+            if (!_cachedWords.Exists(x => x == word.Trim()))
+            {
+                File.AppendAllLines(_dicPath, new[] { word });
+                _cachedWords.Add(word);
+            }
         }
     }
 }

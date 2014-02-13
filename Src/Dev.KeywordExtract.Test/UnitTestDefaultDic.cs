@@ -57,14 +57,23 @@ namespace Dev.KeywordExtract.Test
 
 
         [TestMethod]
+        public void MyTestUpdate()
+        {
+            dic.Update(new[]
+            {
+                "aaaa",
+                "bbb",
+                "cccc" 
+            });
+        }
+
+
+        [TestMethod]
         public void AddandDel()
         {
             TestAddLine();
             TestDelLine();
             TestAddLine();
         }
-
-
-
     }
 }
