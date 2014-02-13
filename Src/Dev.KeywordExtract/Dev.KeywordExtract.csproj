@@ -39,7 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DefaultDic.cs" />
+    <Compile Include="DefaultParser.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="IDic.cs" />
+    <Compile Include="IParse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
